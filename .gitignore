@@ -214,5 +214,20 @@ marimo/_static/
 marimo/_lsp/
 __marimo__/
 
+# --- Segurança e Banco de Dados (SQL Server) ---
+.env                    # Arquivo onde você guarda as senhas do banco
+*.env                   # Qualquer variação de arquivo de ambiente
+*.sql                   # Opcional: se você não quiser subir scripts de dump locais
+
+# --- Arquivos de Dados Pesados (Evita travar o GitHub) ---
+*.csv
+*.xlsx
+*.db
+*.sqlite
+
+# --- Caches do Jupyter Notebook ---
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+
 # Streamlit
 .streamlit/secrets.toml
