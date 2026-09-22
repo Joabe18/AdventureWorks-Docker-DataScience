@@ -27,6 +27,16 @@ Como ilustrado no diagrama acima:
 
 ---
 
+## Algoritmo de agrupamento: B2C x B2B
+
+![comparativoAgrupamentoB2B_B2C](comparativoAgrupamentoB2B_B2C.png.png)
+
+---
+
+## Agrupamento Apriori: Compra casada
+
+![aprioriCompraCasa](aprioriCompraCasa.png)
+
 <!--
 ## 🚀 Como Executar o Projeto
 
