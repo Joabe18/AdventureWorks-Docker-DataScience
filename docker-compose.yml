@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  # --- JUPYTER DATA SCIENCE NOTEBOOK ---
+  jupyter:
+    build: .
+    ports:
+      - "8888:8888"
+    volumes:
+      - jupyter_data:/home/jovyan/work
+    environment:
+      - JUPYTER_TOKEN=sua_senha_segura_aqui
+      - JUPYTER_ENABLE_LAB=yes
+    networks:
+      - ds_network
+
+
+  # --- MICROSOFT SQL SERVER ---
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: sqlserver_db
+    restart: always
+    ports:
+      - "1433:1433"
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=SENHAFORTESQLsenhanova123
+    volumes:
+      - sqlserver_data:/var/opt/mssql
+    networks:
+      - ds_network
+
+# --- REDE E VOLUMES ---
+networks:
+  ds_network:
+    driver: bridge
+
+volumes:
+  jupyter_data:
+  postgres_data:
+  sqlserver_data:
+
